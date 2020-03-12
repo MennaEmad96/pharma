@@ -11,8 +11,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth');
     }
 
@@ -21,13 +20,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
+    public function index(){
         return view('home');
     }
-	// it was send to laravel page when write view welcome but know it send to index page after click login
-	public function welcome()
-    {
-        return view('home');
+
+    public function adminHome(){
+        return view('adminHome');
     }
+
 }
