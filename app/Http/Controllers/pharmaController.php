@@ -162,10 +162,6 @@ class pharmaController extends Controller
 					$id=(DB::table('pharmacists')->where('user_id',$loginID)->pluck('id'))[0];
 					$delivery->pharmacist_id=$id;
 				}
-				//manager id
-		        elseif((Auth::user()->usertype)=='admin'){
-		        	$delivery->pharmacist_id=$loginID;
-		        }
 	    	}
         }
         $delivery->customer_id=$lastRowOfCustomerTable;

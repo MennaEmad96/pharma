@@ -119,10 +119,11 @@
             <li class="active"><a href="/allMedicines">Medicines</a></li>
             <li><a href="/allCustomers">Customers</a></li>
             <li><a href="/allTypes">Types</a></li>
-            <li><a href="/allDeliveries">Deliveries</a></li>
-            <li><a href="/allSales">Sales</a></li>
             <li><a href="/allStores">Store</a></li>
-            @if((Auth::user()->usertype)=='admin')
+            @if((Auth::user()->usertype)=='pharmacist')
+                <li><a href="/allDeliveries">Deliveries</a></li>
+                <li><a href="/allSales">Sales</a></li>
+            @elseif((Auth::user()->usertype)=='admin')
                 <li><a href="/allPharmacists">Pharmacists</a></li>
                 <li><a href="/allDeliveryguys">Delivery Guys</a></li>
             @endif
